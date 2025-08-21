@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Ping Pong Multitouch</title>
+    <meta name="theme-color" content="#0b0f1e" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game" aria-label="Juego Pong Multitouch" role="img"></canvas>
+
+      <section id="hud" class="hud">
+        <div class="score"><span id="p1">0</span>—<span id="p2">0</span></div>
+        <div class="fps" id="fps" aria-hidden="true"></div>
+      </section>
+
+      <section id="menu" class="menu">
+        <div class="card">
+          <h1>Ping Pong Multitouch</h1>
+          <p>Dos jugadores, una pantalla. Arrastra en tu mitad para mover tu paleta.</p>
+          <div class="settings">
+            <label>Puntos para ganar
+              <input id="winPoints" type="number" min="1" max="21" value="5">
+            </label>
+            <label>Sonido
+              <input id="soundToggle" type="checkbox" checked>
+            </label>
+          </div>
+          <div class="actions">
+            <button id="playBtn" class="btn primary">Jugar</button>
+            <button id="installBtn" class="btn" hidden>Instalar</button>
+          </div>
+          <small class="hint">Sugerencia: mejor en orientación vertical.</small>
+        </div>
+      </section>
+
+      <section id="win" class="menu" hidden>
+        <div class="card">
+          <h2 id="winText">¡Ganaste!</h2>
+          <div class="actions">
+            <button id="againBtn" class="btn primary">Reiniciar</button>
+            <button id="menuBtn" class="btn">Menú</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
