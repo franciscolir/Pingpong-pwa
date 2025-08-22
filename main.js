@@ -120,10 +120,9 @@ let last = performance.now();
 let fpsEl = document.getElementById('fps');
 function step(ts) {
   if (!state.running) return;
-  const dt = (ts - last) / 1000;
 
-  //const dt = Math.min(0.033, (ts - last) / 1000);
-  //last = ts;
+  const dt = Math.min(0.033, (ts - last) / 1000);
+  last = ts;
 
   // FPS monitor
   const fps = Math.round(1/dt);
