@@ -210,8 +210,8 @@ function score(who) {
   p2El.textContent = state.score.p2;
   spawnParticles(state.ball.x, state.ball.y, 'white', 24);
   beep(220, 0.2, 'square', 0.05);
-  const winner = state.score.p1 >= state.score.toWin ? 'Jugador Superior' :
-                 state.score.p2 >= state.score.toWin ? 'Jugador Inferior' : null;
+  const winner = state.score.p1 >= state.score.toWin ? 'Jugador 1' :
+                 state.score.p2 >= state.score.toWin ? 'Jugador 2' : null;
   resetPositions();
   if (winner) {
     state.running = false;
@@ -306,6 +306,8 @@ menuBtn?.addEventListener('click', () => {
   menu.hidden = false;
 });
 
+
+
 // PWA install prompt ---------------------------------------------------------
 let deferredPrompt = null;
 const installBtn = document.getElementById('installBtn');
@@ -328,3 +330,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
   });
 }
+
+
+
+
