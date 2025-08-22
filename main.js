@@ -136,7 +136,7 @@ function step(ts) {
   });
   const top = state.paddles.top;
   const bottom = state.paddles.bottom;
-  const speed = 900;
+  const speed = 1600;
 
   function movePaddle(p, targetX) {
     const centerTarget = targetX - p.w/2;
